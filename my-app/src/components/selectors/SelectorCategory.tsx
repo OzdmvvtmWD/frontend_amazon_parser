@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import Form from 'react-bootstrap/Form';
-import { API_BASE } from '../../config'; 
 
 type Category = {
   id: number;
@@ -18,7 +17,7 @@ function SelectorCategory({ onChange }: SelectorCategoryProps) {
   });
 
   useEffect(() => {
-    fetch(`${API_BASE}/api/v1/bestsellers-categories/`)
+    fetch(`https://backend-amazon-parser.onrender.com/api/v1/bestsellers-categories/`)
       .then(res => res.json())
       .then((data: Category[]) => {
         console.log('Категорії з API:', data);

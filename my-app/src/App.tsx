@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import SelectorCategory from './components/selectors/SelectorCategory';
 import GridLayout from './components/grids/Grid';
-import { API_BASE } from './config.ts';
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState('ALL');
@@ -12,8 +11,8 @@ function App() {
     setLoading(true);
     const url =
       selectedCategory === 'ALL'
-        ? `${API_BASE}/api/v1/amazon/`
-        : `${API_BASE}/api/v1/amazon/category-products/?category=${selectedCategory}`;
+        ? `https://backend-amazon-parser.onrender.com/api/v1/amazon/`
+        : `https://backend-amazon-parser.onrender.com/api/v1/amazon/category-products/?category=${selectedCategory}`;
 
     fetch(url)
       .then(res => res.json())
