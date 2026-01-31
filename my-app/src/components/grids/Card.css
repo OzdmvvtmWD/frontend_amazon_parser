@@ -1,0 +1,70 @@
+.custom-card {
+  width: 100%; /* на всю ширину колонки */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.custom-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* фиксированная высота изображения, не растягиваем по ширине */
+.custom-card img {
+  height: 180px;
+  width: 100%;
+  object-fit: contain; /* сохраняет пропорции */
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  background-color: #f8f8f8; /* чтобы картинка не "прыгала" на белом фоне */
+}
+
+.custom-card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.custom-card-body h5 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* максимум 2 строки */
+  -webkit-box-orient: vertical;
+}
+
+.custom-card-body p {
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.custom-card-body ul {
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  list-style-type: disc;
+  word-wrap: break-word; /* перенос слов */
+}
+
+/* цены и скидки */
+.custom-card-body .price {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.custom-card-body .list-price {
+  text-decoration: line-through;
+  color: #888;
+  margin-right: 0.5rem;
+}
+
+.custom-card-body .discount {
+  color: #d9534f;
+  font-weight: bold;
+}
